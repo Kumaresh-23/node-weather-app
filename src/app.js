@@ -7,7 +7,7 @@ const forecast = require('./utils/forecast')
 const chalk = require('chalk')
 
 const app = express()
-
+const port = process.env.PORT || 3000
 //define paths for express config
 const pathDirectory = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -79,6 +79,6 @@ app.get('*', (req,res) => {
 })
 
 
-app.listen(3000, () => {
-    console.log('Server listening')
+app.listen(port, () => {
+    console.log('Server listening' + port)
 })
