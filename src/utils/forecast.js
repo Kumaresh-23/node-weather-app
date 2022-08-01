@@ -9,7 +9,7 @@ const forecast = (latitute, longitude, callback) => {
         }else if(response.statusCode !== 200){
             callback(response.body, undefined)
         }else{
-            callback(undefined, response.body.days[0].description + 'The temperature is currently ' + response.body.currentConditions.temp+ ' degrees out.There is ' +response.body.currentConditions.precip+ '% chance of raining')
+            callback(undefined, response.body.days[0].description + 'The temperature is currently ' + response.body.currentConditions.temp+ ' degrees out.There is ' +response.body.currentConditions.precip+ '% chance of raining.' +response.body.description+ '.')
         }
     })
 }
